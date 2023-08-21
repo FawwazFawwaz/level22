@@ -73,12 +73,14 @@ fetch('https://directus-fawwas-alfarisi-kj.cloud.programmercepat.com/items/news'
         const title = document.getElementById('news-title-update').value;
         const description = document.getElementById('news-description-update').value;
         const image = document.getElementById('news-image-update').value;
+        const writer = document.getElementById('news-writer-update').value;
 
 
         const data = {
         title: title,
         desc: description,
-        img_url: image
+        img_url: image,
+        writer: writer
         };
 
         fetch(`https://directus-fawwas-alfarisi-kj.cloud.programmercepat.com/items/news/${newsId}`, {
