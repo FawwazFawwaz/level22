@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>News</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <div id="app">
+      <header>
+        <h1 class="header">News</h1>
+      </header>
+      <div class="list" id="newsList"></div>
+      <form id="update-form">
+        <select id="news-id-update" required>
+                <option value="" disabled selected>Select News ID</option>
+            </select>
+                <input type="text" id="news-title-update" placeholder="Title" required>
+                <textarea id="news-description-update" placeholder="Description" required></textarea>
+                <textarea id="news-image-update" placeholder="Image" required></textarea>
+                <button type="submit">Update News</button>
+            </form>
+    </div>
+    <script src="./index.mjs" type="module"></script>
+  </body>
+</html>

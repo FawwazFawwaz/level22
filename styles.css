@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    color: #000000;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .list {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  .writerAndDate {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .writerAndDate .writer {
+    font-weight: 600;
+  }
+  
+  .newsContent img {
+    max-width: 100%;
+  }
+  
+  .description {
+    display: flex;
+    flex-direction: column;
+  }
+  
