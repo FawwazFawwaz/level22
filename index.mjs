@@ -98,8 +98,108 @@ fetch('https://directus-fawwas-alfarisi-kj.cloud.programmercepat.com/items/news'
             console.error('Error:', error);
         });
     })
+const deleteFormDropdown = document.getElementById('news-id-delete');
+deleteFormDropdown.innerHTML = '<option value="" disabled selected>Select News ID</option>';
+data.data.forEach(news => {
+  const option = document.createElement('option');
+  option.value = news.id;
+  option.textContent = news.id;
+  deleteFormDropdown.appendChild(option);
+});
+
+
+document.getElementById('delete-form').addEventListener('submit', function(event) {
+event.preventDefault();
+
+const newsId = document.getElementById('news-id-delete').value;
+
+fetch(`https://directus-fawwas-alfarisi-kj.cloud.programmercepat.com/items/news/${newsId}`, {
+  method: 'DELETE'
+})
+  .then(response => {
+    if (response.ok) {
+      console.log('News deleted successfully');
+    } else {
+      console.error('Error deleting news:', response.statusText);
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+});
 });
 })
 .catch(error => {
   console.error('Error:', error);
 });
+
+document
+  .getElementById("create-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const title = document.getElementById("news-title-create").value;
+    const writer = document.getElementById("news-writer-create").value;
+    const desc = document.getElementById("news-description-create").value;
+    const image = document.getElementById("news-image-create").value;
+
+    const data = {
+      title: title,
+      writer: writer,
+      desc: desc,
+      img_url: image,
+    };
+
+    fetch(
+      "https://directus-fawwas-alfarisi-kj.cloud.programmercepat.com/items/news",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    )
+      .then((response) => response.json())
+      .then((responseData) => {
+        console.log("Response:", responseData);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  });
+  const showCreateFormButton = document.getElementById("show-create-form");
+  const hideCreateFormButton = document.getElementById("hide-create-form");
+  const createFormContainer = document.getElementById("create-form");
+
+    showCreateFormButton.addEventListener("click", function() {
+      createFormContainer.style.display = "block";
+    });
+    hideCreateFormButton.addEventListener("click", function() {
+      createFormContainer.style.display = "none";
+    });
+
+
+    const showUpdateFormButton = document.getElementById("show-update-form");
+    const hideUpdateFormButton = document.getElementById("hide-update-form");
+    const updateFormContainer = document.getElementById("update-form");
+
+    showUpdateFormButton.addEventListener("click", function() {
+      updateFormContainer.style.display = "block";
+    });
+    
+    hideUpdateFormButton.addEventListener("click", function() {
+      updateFormContainer.style.display = "none";
+    });
+
+    const showDeleteFormButton = document.getElementById("show-delete-form");
+    const hideDeleteFormButton = document.getElementById("hide-delete-form");
+    const deleteFormContainer = document.getElementById("delete-form");
+
+    showDeleteFormButton.addEventListener("click", function() {
+      deleteFormContainer.style.display = "block";
+    });
+    
+    hideDeleteFormButton.addEventListener("click", function() {
+      deleteFormContainer.style.display = "none";
+    });
