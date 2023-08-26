@@ -173,7 +173,7 @@ document
   const createFormContainer = document.getElementById("create-form");
 
     showCreateFormButton.addEventListener("click", function() {
-      createFormContainer.style.display = "block";
+      createFormContainer.style.display = "flex";
     });
     hideCreateFormButton.addEventListener("click", function() {
       createFormContainer.style.display = "none";
@@ -185,7 +185,7 @@ document
     const updateFormContainer = document.getElementById("update-form");
 
     showUpdateFormButton.addEventListener("click", function() {
-      updateFormContainer.style.display = "block";
+      updateFormContainer.style.display = "flex";
     });
     
     hideUpdateFormButton.addEventListener("click", function() {
@@ -197,7 +197,7 @@ document
     const deleteFormContainer = document.getElementById("delete-form");
 
     showDeleteFormButton.addEventListener("click", function() {
-      deleteFormContainer.style.display = "block";
+      deleteFormContainer.style.display = "flex";
     });
     
     hideDeleteFormButton.addEventListener("click", function() {
