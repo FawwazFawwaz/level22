@@ -16,15 +16,19 @@
       <button id="show-update-form">Update</button>
       <button id="show-delete-form">Delete</button>
       </div>
+      
       <form id="create-form"  style="display: none;">
+        <div>
         <input type="text" id="news-title-create" placeholder="Title" required>
         <input type="text" id="news-writer-create" placeholder="Writer" required>
         <textarea id="news-description-create" placeholder="Description" required></textarea>
 				<input type="text" id="news-image-create" placeholder="Image URL" accept="image/*">
         <button type="submit">Create News</button>
         <button id="hide-create-form">cancel</button>
+      </div>
     </form>
       <form id="update-form" style="display: none;">
+      <div>
         <select id="news-id-update" required>
                 <option value="" disabled selected>Select News ID</option>
             </select>
@@ -34,13 +38,16 @@
                 <textarea id="news-writer-update" placeholder="Writer" required></textarea>
                 <button type="submit">Update News</button>
                 <button id="hide-update-form">cancel</button>
+              </div>
             </form>
             <form id="delete-form" style="display: none;">
+            <div>
               <select id="news-id-delete" required>
               <option value="" disabled selected>Select News ID</option>
               </select>
               <button type="submit">Delete News</button>
               <button id="hide-delete-form">cancel</button>
+            </div>
             </form>
       <div class="list" id="newsList"></div>
     </div>
