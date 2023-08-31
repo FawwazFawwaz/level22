@@ -48,7 +48,6 @@ body {
   #news-image-create,
   #news-writer-create {
     display: block;
-    width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -62,9 +61,7 @@ body {
 
   button[type="submit"] {
     display: block;
-    width: 100%;
     padding: 10px;
-    color: #000000;
     background-color: #fff;
     border: 2px solid #ccc;
     border-radius: 5px;
@@ -73,7 +70,6 @@ body {
   }
   
   select {
-    width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -82,7 +78,7 @@ body {
   }
   
   textarea {
-    width: 100%;
+    width: 80%;
     height: 100px;
     padding: 10px;
     margin-bottom: 15px;
